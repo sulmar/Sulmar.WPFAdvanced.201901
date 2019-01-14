@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.WPFClient", "Sulmar.WPF.Advanced.WPFClient\Sulmar.WPF.Advanced.WPFClient.csproj", "{73998C4D-26B8-43C3-ACBE-28BF34FBFD9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.ViewModels", "Sulmar.WPF.Advanced.ViewModels\Sulmar.WPF.Advanced.ViewModels.csproj", "{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.Models", "Sulmar.WPF.Advanced.Models\Sulmar.WPF.Advanced.Models.csproj", "{5F259898-7574-42C3-97E0-9680879AD750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.IServices", "Sulmar.WPF.Advanced.IServices\Sulmar.WPF.Advanced.IServices.csproj", "{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.FakeServices", "Sulmar.WPF.Advanced.FakeServices\Sulmar.WPF.Advanced.FakeServices.csproj", "{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.Common", "Sulmar.WPF.Advanced.Common\Sulmar.WPF.Advanced.Common.csproj", "{915C8C5C-266B-4980-A7C7-107366E41942}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.WPF", "Sulmar.WPF.Advanced.WPF\Sulmar.WPF.Advanced.WPF.csproj", "{F933B93F-676D-41B7-BC66-8C9E33559572}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{73998C4D-26B8-43C3-ACBE-28BF34FBFD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73998C4D-26B8-43C3-ACBE-28BF34FBFD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73998C4D-26B8-43C3-ACBE-28BF34FBFD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F259898-7574-42C3-97E0-9680879AD750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F259898-7574-42C3-97E0-9680879AD750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F259898-7574-42C3-97E0-9680879AD750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F259898-7574-42C3-97E0-9680879AD750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{915C8C5C-266B-4980-A7C7-107366E41942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{915C8C5C-266B-4980-A7C7-107366E41942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{915C8C5C-266B-4980-A7C7-107366E41942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{915C8C5C-266B-4980-A7C7-107366E41942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F933B93F-676D-41B7-BC66-8C9E33559572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F933B93F-676D-41B7-BC66-8C9E33559572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F933B93F-676D-41B7-BC66-8C9E33559572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F933B93F-676D-41B7-BC66-8C9E33559572}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sulmar.WPF.Advanced.WPFClient
+namespace Sulmar.WPF.Advanced.WPFClient.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CustomersView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CustomersView : Page
     {
-        public MainWindow()
+        public CustomersView()
         {
             InitializeComponent();
         }

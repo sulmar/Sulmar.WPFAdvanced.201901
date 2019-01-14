@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sulmar.WPF.Advanced.Common\Sulmar.WPF.Advanced.Common.csproj" />
+    <ProjectReference Include="..\Sulmar.WPF.Advanced.FakeServices\Sulmar.WPF.Advanced.FakeServices.csproj" />
+    <ProjectReference Include="..\Sulmar.WPF.Advanced.IServices\Sulmar.WPF.Advanced.IServices.csproj" />
+    <ProjectReference Include="..\Sulmar.WPF.Advanced.Models\Sulmar.WPF.Advanced.Models.csproj" />
+  </ItemGroup>
+
+</Project>
