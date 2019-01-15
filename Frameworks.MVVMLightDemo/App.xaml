@@ -1,0 +1,13 @@
+<Application x:Class="Frameworks.MVVMLightDemo.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:Frameworks.MVVMLightDemo"              
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             StartupUri="Views/ShellView.xaml" >
+  <Application.Resources>
+    <ResourceDictionary>
+      <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Frameworks.MVVMLightDemo.ViewModel" />
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

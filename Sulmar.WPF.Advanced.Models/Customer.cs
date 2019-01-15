@@ -13,5 +13,6 @@ namespace Sulmar.WPF.Advanced.Models
         public bool IsDeleted { get; set; }
 
         public bool IsSelected { get; set; }
+
     }
 }

@@ -5,17 +5,25 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.WPFClient", "Sulmar.WPF.Advanced.WPFClient\Sulmar.WPF.Advanced.WPFClient.csproj", "{73998C4D-26B8-43C3-ACBE-28BF34FBFD9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.ViewModels", "Sulmar.WPF.Advanced.ViewModels\Sulmar.WPF.Advanced.ViewModels.csproj", "{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulmar.WPF.Advanced.ViewModels", "Sulmar.WPF.Advanced.ViewModels\Sulmar.WPF.Advanced.ViewModels.csproj", "{6D1DED60-5630-405D-ADAE-D0A0FDDB11C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.Models", "Sulmar.WPF.Advanced.Models\Sulmar.WPF.Advanced.Models.csproj", "{5F259898-7574-42C3-97E0-9680879AD750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulmar.WPF.Advanced.Models", "Sulmar.WPF.Advanced.Models\Sulmar.WPF.Advanced.Models.csproj", "{5F259898-7574-42C3-97E0-9680879AD750}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.IServices", "Sulmar.WPF.Advanced.IServices\Sulmar.WPF.Advanced.IServices.csproj", "{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulmar.WPF.Advanced.IServices", "Sulmar.WPF.Advanced.IServices\Sulmar.WPF.Advanced.IServices.csproj", "{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.FakeServices", "Sulmar.WPF.Advanced.FakeServices\Sulmar.WPF.Advanced.FakeServices.csproj", "{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulmar.WPF.Advanced.FakeServices", "Sulmar.WPF.Advanced.FakeServices\Sulmar.WPF.Advanced.FakeServices.csproj", "{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.Common", "Sulmar.WPF.Advanced.Common\Sulmar.WPF.Advanced.Common.csproj", "{915C8C5C-266B-4980-A7C7-107366E41942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sulmar.WPF.Advanced.Common", "Sulmar.WPF.Advanced.Common\Sulmar.WPF.Advanced.Common.csproj", "{915C8C5C-266B-4980-A7C7-107366E41942}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.WPF", "Sulmar.WPF.Advanced.WPF\Sulmar.WPF.Advanced.WPF.csproj", "{F933B93F-676D-41B7-BC66-8C9E33559572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks.MVVMLightDemo", "Frameworks.MVVMLightDemo\Frameworks.MVVMLightDemo.csproj", "{9523CC17-28F4-4DCB-9ECD-349AE04AB61C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks.CaliburnMicroDemo", "Frameworks.CaliburnMicroDemo\Frameworks.CaliburnMicroDemo.csproj", "{7346A4A7-EBF1-4F57-AB17-9BA363C2143B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks.PrismDemo", "Frameworks.PrismDemo\Frameworks.PrismDemo.csproj", "{E552442B-33CA-408F-8784-83507F7058D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks.ModuleA", "Frameworks.ModuleA\Frameworks.ModuleA.csproj", "{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +59,22 @@ Global
 		{F933B93F-676D-41B7-BC66-8C9E33559572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F933B93F-676D-41B7-BC66-8C9E33559572}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F933B93F-676D-41B7-BC66-8C9E33559572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9523CC17-28F4-4DCB-9ECD-349AE04AB61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9523CC17-28F4-4DCB-9ECD-349AE04AB61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9523CC17-28F4-4DCB-9ECD-349AE04AB61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9523CC17-28F4-4DCB-9ECD-349AE04AB61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7346A4A7-EBF1-4F57-AB17-9BA363C2143B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7346A4A7-EBF1-4F57-AB17-9BA363C2143B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7346A4A7-EBF1-4F57-AB17-9BA363C2143B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7346A4A7-EBF1-4F57-AB17-9BA363C2143B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E552442B-33CA-408F-8784-83507F7058D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E552442B-33CA-408F-8784-83507F7058D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E552442B-33CA-408F-8784-83507F7058D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E552442B-33CA-408F-8784-83507F7058D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

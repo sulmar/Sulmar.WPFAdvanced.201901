@@ -21,8 +21,8 @@
             <DockPanel>
 
                 <StackPanel DockPanel.Dock="Left">
-                    <Button Command="{Binding ShowCustomersCommand}">Option 1</Button>
-                    <Button>Option 2</Button>
+                    <Button Command="{Binding ShowCustomersCommand}">Customers</Button>
+                    <Button Command="{Binding ShowDepartmentsCommand}">Departments</Button>
                     <Button>Option 3</Button>
                 </StackPanel>
 

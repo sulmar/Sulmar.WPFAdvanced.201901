@@ -18,9 +18,9 @@ namespace Sulmar.WPF.Advanced.ViewModels
     {
         public ViewModelLocator()
         {
-            UseUnity();
+            // UseUnity();
 
-            // UseAutoFac();
+            UseAutoFac();
         }
 
         // Install-Package AutoFac
@@ -28,9 +28,12 @@ namespace Sulmar.WPF.Advanced.ViewModels
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<FakeCustomersService>().As<ICustomersService>();
+            builder.RegisterType<FakeDepartmentsService>().As<IDepartmentsService>();
             builder.RegisterType<ShellViewModel>();
             builder.RegisterType<CustomersViewModel>();
+            builder.RegisterType<DepartmentsViewModel>();
             builder.RegisterType<CustomerFaker>();
+            builder.RegisterType<DepartmentFaker>();
             builder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
 
             IContainer container = builder.Build();
@@ -45,10 +48,13 @@ namespace Sulmar.WPF.Advanced.ViewModels
         {
             IUnityContainer container = new UnityContainer();            
             container.RegisterType<ICustomersService, FakeCustomersService>();
+            container.RegisterType<IDepartmentsService, FakeDepartmentsService>();
             container.RegisterSingleton<INavigationService, FrameNavigationService>();
 
             container.RegisterType<ShellViewModel>();
             container.RegisterType<CustomersViewModel>();
+            container.RegisterType<DepartmentsViewModel>();
+
             // container.RegisterSingleton<>
 
             // Automatyczna rejestracja 
@@ -67,9 +73,10 @@ namespace Sulmar.WPF.Advanced.ViewModels
         // Unity
         //  public CustomersViewModel CustomersViewModel => container.Resolve<CustomersViewModel>();
 
-        public CustomersViewModel CustomersViewModel => ServiceLocator.Current.GetInstance<CustomersViewModel>();
         public ShellViewModel ShellViewModel => ServiceLocator.Current.GetInstance<ShellViewModel>();
-
+        public CustomersViewModel CustomersViewModel => ServiceLocator.Current.GetInstance<CustomersViewModel>();        
+        public DepartmentsViewModel DepartmentsViewModel => ServiceLocator.Current.GetInstance<DepartmentsViewModel>();
+        
 
 
 

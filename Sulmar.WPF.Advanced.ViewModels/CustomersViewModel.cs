@@ -6,22 +6,28 @@ using System.Text;
 
 namespace Sulmar.WPF.Advanced.ViewModels
 {
-    public class CustomersViewModel : ViewModelBase
+    public class CustomersViewModel : ItemsViewModel<Customer>
     {
-        public IEnumerable<Customer> Customers { get; set; }
-
-        private readonly ICustomersService customersService;
-
-        public CustomersViewModel(ICustomersService customersService)
+        public CustomersViewModel(ICustomersService itemsService) 
+            : base(itemsService)
         {
-            this.customersService = customersService;
-
-            Load();
+            
         }
 
-        private void Load()
-        {
-            Customers = customersService.Get();
-        }
+        public IEnumerable<Customer> Customers => Items;
+
+        //private readonly ICustomersService customersService;
+
+        //public CustomersViewModel(ICustomersService customersService)
+        //{
+        //    this.customersService = customersService;
+
+        //    Load();
+        //}
+
+        //private void Load()
+        //{
+        //    Customers = customersService.Get();
+        //}
     }
 }

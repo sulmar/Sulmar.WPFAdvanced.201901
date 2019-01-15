@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 namespace Sulmar.WPF.Advanced.IServices
 {
-    public interface ICustomersService
+    public interface ICustomersService : IItemsService<Customer>
     {
-        IEnumerable<Customer> Get();
+        
     }
 }
