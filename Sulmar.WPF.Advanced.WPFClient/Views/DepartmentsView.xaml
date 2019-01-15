@@ -11,7 +11,9 @@
 
     <Grid>
 
-        <ListBox ItemsSource="{Binding Departments}" />
+        <ListBox ItemsSource="{Binding Departments}"
+                 DisplayMemberPath="Name"
+                 />
 
     </Grid>
 </Page>
