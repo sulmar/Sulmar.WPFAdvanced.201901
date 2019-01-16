@@ -28,10 +28,10 @@ namespace Sulmar.WPF.Advanced.ViewModels
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<FakeCustomersService>().As<ICustomersService>();
-            builder.RegisterType<FakeDepartmentsService>().As<IDepartmentsService>();
+            builder.RegisterType<FakeDepartmentsService>().As<IDepartmentsService>().SingleInstance();
             builder.RegisterType<ShellViewModel>();
-            builder.RegisterType<CustomersViewModel>();
-            builder.RegisterType<DepartmentsViewModel>();
+            builder.RegisterType<CustomersViewModel>().SingleInstance();
+            builder.RegisterType<DepartmentsViewModel>().SingleInstance();
             builder.RegisterType<CustomerFaker>();
             builder.RegisterType<DepartmentFaker>();
             builder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
@@ -48,7 +48,7 @@ namespace Sulmar.WPF.Advanced.ViewModels
         {
             IUnityContainer container = new UnityContainer();            
             container.RegisterType<ICustomersService, FakeCustomersService>();
-            container.RegisterType<IDepartmentsService, FakeDepartmentsService>();
+            container.RegisterSingleton<IDepartmentsService, FakeDepartmentsService>();
             container.RegisterSingleton<INavigationService, FrameNavigationService>();
 
             container.RegisterType<ShellViewModel>();

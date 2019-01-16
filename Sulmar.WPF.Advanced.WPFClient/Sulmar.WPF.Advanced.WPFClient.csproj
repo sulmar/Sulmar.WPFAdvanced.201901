@@ -108,6 +108,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AttachedProperties\Attached.cs" />
+    <Compile Include="AttachedProperties\TextBoxEx.cs" />
+    <Compile Include="CustomControls\MyControl.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
@@ -172,6 +175,10 @@
     <ProjectReference Include="..\Sulmar.WPF.Advanced.IServices\Sulmar.WPF.Advanced.IServices.csproj">
       <Project>{A82D76E9-99CB-43AB-B0C5-F12DC6BCED27}</Project>
       <Name>Sulmar.WPF.Advanced.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sulmar.WPF.Advanced.Models\Sulmar.WPF.Advanced.Models.csproj">
+      <Project>{5f259898-7574-42c3-97e0-9680879ad750}</Project>
+      <Name>Sulmar.WPF.Advanced.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sulmar.WPF.Advanced.ViewModels\Sulmar.WPF.Advanced.ViewModels.csproj">
       <Project>{6d1ded60-5630-405d-adae-d0a0fddb11c3}</Project>

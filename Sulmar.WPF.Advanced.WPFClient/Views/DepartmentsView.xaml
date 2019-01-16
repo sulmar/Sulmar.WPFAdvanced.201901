@@ -3,17 +3,89 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
+      xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"      
+      xmlns:m="clr-namespace:Sulmar.WPF.Advanced.Models;assembly=Sulmar.WPF.Advanced.Models"
+      xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+      xmlns:cc="clr-namespace:Sulmar.WPF.Advanced.WPFClient.CustomControls"
+      xmlns:ap="clr-namespace:Sulmar.WPF.Advanced.WPFClient.AttachedProperties"
       DataContext="{Binding Source={StaticResource Locator}, Path=DepartmentsViewModel}"
       mc:Ignorable="d" 
+      KeepAlive="True"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DepartmentsView">
 
     <Grid>
 
-        <ListBox ItemsSource="{Binding Departments}"
+        <Grid.Resources>
+
+            <CollectionViewSource x:Key="DepartmentsSource"
+                                  Source="{Binding Departments}">
+                <CollectionViewSource.SortDescriptions>
+                    <scm:SortDescription PropertyName="Name" Direction="Ascending" />
+                </CollectionViewSource.SortDescriptions>
+                
+            </CollectionViewSource>
+
+         
+            
+            <HierarchicalDataTemplate 
+                x:Key="CustomerTemplate"
+                DataType="{x:Type m:Customer}" >
+
+                    <StackPanel>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="FirstName" />
+                                    <Binding Path="LastName" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        
+                        </TextBlock>
+                    <!--<TextBlock Text="{Binding FirstName}"/>
+                    <TextBlock Text="{Binding LastName}"/>-->
+                </StackPanel>
+
+            </HierarchicalDataTemplate>
+            
+            <HierarchicalDataTemplate 
+                x:Key="DepartmentTemplate"
+                DataType="{x:Type m:Department}"   
+                ItemsSource="{Binding Customers}"
+                ItemTemplate="{StaticResource CustomerTemplate}"
+                >
+
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" />
+                </StackPanel>
+                
+            </HierarchicalDataTemplate>
+
+         
+        </Grid.Resources>
+            
+
+        <!--<ListBox ItemsSource="{Binding Departments}"
                  DisplayMemberPath="Name"
-                 />
+                 />-->
+
+
+        <StackPanel>
+
+            <!--<cc:MyControl Area="{Binding}" />-->
+
+            <TextBlock Text="Hello World" ap:Ex.HeaderContent="Hello Header" />
+
+
+            <TreeView 
+            ItemsSource="{Binding Source={StaticResource DepartmentsSource}}"
+            ItemTemplate="{StaticResource DepartmentTemplate}"
+            />
+
+         
+
+
+        </StackPanel>
 
     </Grid>
 </Page>

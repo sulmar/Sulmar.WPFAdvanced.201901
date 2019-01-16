@@ -4,20 +4,82 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
+      xmlns:m="clr-namespace:Sulmar.WPF.Advanced.Models;assembly=Sulmar.WPF.Advanced.Models"
+      xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+      xmlns:ap="clr-namespace:Sulmar.WPF.Advanced.WPFClient.AttachedProperties"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomersView"
-      DataContext="{Binding Source={StaticResource Locator}, Path=CustomersViewModel}"
-      
+      KeepAlive="True"
+      DataContext="{Binding Source={StaticResource Locator}, Path=CustomersViewModel}" 
       >
-
   
+    <Grid>
 
-    <Grid Background="Blue">
+        <Grid.Resources>
 
-        <Label HorizontalAlignment="Center" 
-               VerticalAlignment="Center"
-               Foreground="White">Customers View</Label>
-        
+            <CollectionViewSource x:Key="DepartmentsSource"
+                                  Source="{Binding Departments}">
+                <CollectionViewSource.SortDescriptions>
+                    <scm:SortDescription PropertyName="Name" Direction="Ascending" />
+                </CollectionViewSource.SortDescriptions>
+            </CollectionViewSource>
+
+            <DataTemplate 
+                x:Key="CustomerTemplate"
+                DataType="{x:Type m:Customer}" >
+
+                <StackPanel>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="FirstName" />
+                                <Binding Path="LastName" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+
+                    </TextBlock>
+                    <!--<TextBlock Text="{Binding FirstName}"/>
+                    <TextBlock Text="{Binding LastName}"/>-->
+                </StackPanel>
+
+            </DataTemplate>
+
+            <HierarchicalDataTemplate 
+                x:Key="DepartmentTemplate"
+                DataType="{x:Type m:Department}"   
+                ItemsSource="{Binding Customers}"
+                ItemTemplate="{StaticResource CustomerTemplate}"
+                >
+
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" />
+                </StackPanel>
+
+            </HierarchicalDataTemplate>
+
+
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TreeView 
+            ItemsSource="{Binding Source={StaticResource DepartmentsSource}}"
+            ItemTemplate="{StaticResource DepartmentTemplate}"
+            Grid.Column="0"
+            ap:Attached.TreeViewSelectedItem="{Binding SelectedCustomer, Mode=TwoWay}"
+            
+            />
+
+        <ListView ItemsSource="{Binding Customers}"
+                  ItemTemplate="{StaticResource CustomerTemplate}" 
+                  SelectedItem="{Binding SelectedCustomer}"
+                  Grid.Column="1"
+                  />
+
+
     </Grid>
 </Page>

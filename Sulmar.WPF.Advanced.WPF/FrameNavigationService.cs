@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Navigation;
 
 namespace Sulmar.WPF.Advanced.WPF
 {
@@ -34,9 +35,18 @@ namespace Sulmar.WPF.Advanced.WPF
         {
             Frame frame = GetFrame("MainFrame");
 
-            Uri uri = new Uri($"Views/{viewname}.xaml", UriKind.Relative);
+            //if (frame.BackStack!=null && frame.BackStack.Cast<JournalEntry>().Any(p => p.Name == viewname))
+            //{
+            //    var page = frame.BackStack.Cast<JournalEntry>().SingleOrDefault(p => p.Name == viewname);
+                
+            //    frame.Navigate(page);
+            //}
+            //else
+            //{
+                Uri uri = new Uri($"Views/{viewname}.xaml", UriKind.Relative);
 
-            frame.Navigate(uri, parameter);
+                frame.Navigate(uri, parameter);
+            //}
         }
 
         private Frame GetFrame(string name)

@@ -28,6 +28,7 @@
 
                 <Frame 
                     x:Name="MainFrame"
+                    NavigationUIVisibility="Visible"
                       VerticalContentAlignment="Stretch"
                        HorizontalContentAlignment="Stretch"
                        

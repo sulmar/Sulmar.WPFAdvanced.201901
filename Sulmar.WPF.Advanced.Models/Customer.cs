@@ -11,6 +11,7 @@ namespace Sulmar.WPF.Advanced.Models
         public string LastName { get; set; }
         public string Photo { get; set; }
         public bool IsDeleted { get; set; }
+        public string FullName => $"{FirstName} {LastName}";
 
         public bool IsSelected { get; set; }
 
