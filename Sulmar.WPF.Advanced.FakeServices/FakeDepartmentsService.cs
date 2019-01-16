@@ -12,7 +12,7 @@ namespace Sulmar.WPF.Advanced.FakeServices
 
         public FakeDepartmentsService(DepartmentFaker departmentFaker)
         {
-            this.departments = departmentFaker.Generate(3);
+            this.departments = departmentFaker.Generate(30);
         }
 
         public IEnumerable<Department> Get()

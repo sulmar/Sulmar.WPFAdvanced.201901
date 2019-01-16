@@ -21,7 +21,16 @@ namespace Sulmar.WPF.Advanced.WPFClient.AttachedProperties
         }
 
         public static readonly DependencyProperty TreeViewSelectedItemProperty =
-            DependencyProperty.RegisterAttached("TreeViewSelectedItem", typeof(object), typeof(Attached), new PropertyMetadata(new object(), TreeViewSelectedItemChanged));
+            DependencyProperty.RegisterAttached("TreeViewSelectedItem",
+                typeof(object),
+                typeof(Attached),
+                new FrameworkPropertyMetadata(
+                    new object(),                   
+                     FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                     TreeViewSelectedItemChanged));
+                
+                    // new PropertyMetadata(new object(), TreeViewSelectedItemChanged));
+
 
         static void TreeViewSelectedItemChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
@@ -68,8 +77,10 @@ namespace Sulmar.WPF.Advanced.WPFClient.AttachedProperties
             if (item != null)
             {
                 item.IsSelected = true;
+                item.BringIntoView(new Rect (new Size(50, 100)));
                 return true;
             }
+
 
             bool wasFound = false;
             for (int i = 0; i < parentItem.Items.Count; i++)

@@ -70,7 +70,7 @@
             ItemsSource="{Binding Source={StaticResource DepartmentsSource}}"
             ItemTemplate="{StaticResource DepartmentTemplate}"
             Grid.Column="0"
-            ap:Attached.TreeViewSelectedItem="{Binding SelectedCustomer, Mode=TwoWay}"
+            ap:Attached.TreeViewSelectedItem="{Binding SelectedCustomer}"
             
             />
 
