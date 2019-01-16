@@ -11,6 +11,7 @@ namespace Sulmar.WPF.Advanced.ViewModels
 
         public ICommand ShowCustomersCommand { get; }
         public ICommand ShowDepartmentsCommand { get; set; }
+        public ICommand ShowCustomerCommand { get; }
 
         public ShellViewModel(INavigationService navigationService)
         {
@@ -18,6 +19,7 @@ namespace Sulmar.WPF.Advanced.ViewModels
 
             ShowCustomersCommand = new RelayCommand(ShowCustomers);
             ShowDepartmentsCommand = new RelayCommand(()=>navigationService.Navigate("DepartmentsView"));
+            ShowCustomerCommand = new RelayCommand(() => navigationService.Navigate("CustomerView"));
         }
 
         private void ShowCustomers() => navigationService.Navigate("CustomersView");

@@ -2,6 +2,7 @@
 using Sulmar.WPF.Advanced.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Sulmar.WPF.Advanced.FakeServices
@@ -15,9 +16,8 @@ namespace Sulmar.WPF.Advanced.FakeServices
             this.departments = departmentFaker.Generate(30);
         }
 
-        public IEnumerable<Department> Get()
-        {
-            return departments;
-        }
+        public IEnumerable<Department> Get() => departments;
+
+        public Department Get(int id) => departments.SingleOrDefault(c => c.Id == id);
     }
 }

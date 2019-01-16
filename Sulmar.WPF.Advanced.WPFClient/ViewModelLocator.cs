@@ -32,6 +32,7 @@ namespace Sulmar.WPF.Advanced.ViewModels
             builder.RegisterType<ShellViewModel>();
             builder.RegisterType<CustomersViewModel>().SingleInstance();
             builder.RegisterType<DepartmentsViewModel>().SingleInstance();
+            builder.RegisterType<CustomerViewModel>();
             builder.RegisterType<CustomerFaker>();
             builder.RegisterType<DepartmentFaker>();
             builder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
@@ -76,7 +77,8 @@ namespace Sulmar.WPF.Advanced.ViewModels
         public ShellViewModel ShellViewModel => ServiceLocator.Current.GetInstance<ShellViewModel>();
         public CustomersViewModel CustomersViewModel => ServiceLocator.Current.GetInstance<CustomersViewModel>();        
         public DepartmentsViewModel DepartmentsViewModel => ServiceLocator.Current.GetInstance<DepartmentsViewModel>();
-        
+        public CustomerViewModel CustomerViewModel => ServiceLocator.Current.GetInstance<CustomerViewModel>();
+
 
 
 

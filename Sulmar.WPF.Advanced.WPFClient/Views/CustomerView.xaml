@@ -1,0 +1,108 @@
+﻿<Page x:Class="Sulmar.WPF.Advanced.WPFClient.Views.CustomerView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      DataContext="{Binding Source={StaticResource Locator}, Path=CustomerViewModel}" 
+      Title="CustomerView">
+
+    <Grid>
+        <Grid.Resources>
+            <ControlTemplate x:Key="TextBoxTemplate" TargetType="TextBox">
+                <Grid>
+
+                    <Border x:Name="border" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost" 
+                                      Focusable="false"
+                                      HorizontalScrollBarVisibility="Hidden" 
+                                      VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+
+                    <TextBlock Text="{TemplateBinding Tag}"
+                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                               Padding="{TemplateBinding Padding}"
+                               FontStyle="Italic"
+                               Foreground="Gray">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Hidden"/>
+                                <Style.Triggers>
+                                    <DataTrigger 
+                                        Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Grid>
+            </ControlTemplate>
+
+            <ControlTemplate x:Key="HeaderedTextBoxTemplate" TargetType="TextBox">
+                <Grid>
+
+                    <Border x:Name="border" 
+                           CornerRadius="5"
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" 
+                            SnapsToDevicePixels="True">
+                        <ScrollViewer x:Name="PART_ContentHost" 
+                                      Margin="5,0,0,0"
+                                      Focusable="false"
+                                      HorizontalScrollBarVisibility="Hidden" 
+                                      VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+
+                    <TextBlock Text="{TemplateBinding Tag}"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Padding="{TemplateBinding Padding}"
+                               FontSize="12"
+                               Margin="3"
+                               FontStyle="Italic"
+                               Foreground="Gray">
+                        
+                    </TextBlock>
+                </Grid>
+            </ControlTemplate>
+
+            <Style TargetType="TextBox">
+                <Setter Property="Template" Value="{StaticResource HeaderedTextBoxTemplate}" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Height" Value="50" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+            </Style>
+        </Grid.Resources>
+        
+        <StackPanel DataContext="{Binding Customer}">
+            <TextBox Text="{Binding FirstName}" Tag="First name" />
+            <TextBox Text="{Binding LastName}" Tag="Last name" />
+            <Image Width="200" Source="{Binding Photo}" />
+
+            <Label>
+                <Label.Content>
+                    <Rectangle Width="10" Height="10" Fill="Navy" />
+                </Label.Content>
+                <Label.Template>
+                    <ControlTemplate TargetType="Label">
+                        <Border BorderBrush="Black" BorderThickness="1">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Label.Template>
+            </Label>
+        </StackPanel>
+        
+    </Grid>
+</Page>
