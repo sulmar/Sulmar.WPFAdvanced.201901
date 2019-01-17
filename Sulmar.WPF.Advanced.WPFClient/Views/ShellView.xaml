@@ -57,8 +57,17 @@
                                 <Image Source="{StaticResource CustomerImage}" />
                                 <TextBlock VerticalAlignment="Center" Text="Employee" />
                             </StackPanel>
+                        </Button>
+
+                        <Button Command="{Binding NavigateCommand}" 
+                                CommandParameter="OptionsGroupsView">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Settings" />
+                            </StackPanel>
 
                         </Button>
+                        
                     </StackPanel>
 
                 </cc:HamburgerControl>

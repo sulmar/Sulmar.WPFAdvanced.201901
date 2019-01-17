@@ -29,12 +29,16 @@ namespace Sulmar.WPF.Advanced.ViewModels
             var builder = new ContainerBuilder();
             builder.RegisterType<FakeCustomersService>().As<ICustomersService>();
             builder.RegisterType<FakeDepartmentsService>().As<IDepartmentsService>().SingleInstance();
+            builder.RegisterType<FakeOptionsGroupsService>().As<IOptionsGroupsService>().SingleInstance();
             builder.RegisterType<ShellViewModel>();
             builder.RegisterType<CustomersViewModel>().SingleInstance();
             builder.RegisterType<DepartmentsViewModel>().SingleInstance();
+            builder.RegisterType<OptionsGroupsViewModel>().SingleInstance();
             builder.RegisterType<CustomerViewModel>();
             builder.RegisterType<CustomerFaker>();
             builder.RegisterType<DepartmentFaker>();
+            builder.RegisterType<OptionsGroupFaker>();
+            builder.RegisterType<OptionFaker>();
             builder.RegisterType<FrameNavigationService>().As<INavigationService>().SingleInstance();
 
             IContainer container = builder.Build();
@@ -78,9 +82,6 @@ namespace Sulmar.WPF.Advanced.ViewModels
         public CustomersViewModel CustomersViewModel => ServiceLocator.Current.GetInstance<CustomersViewModel>();        
         public DepartmentsViewModel DepartmentsViewModel => ServiceLocator.Current.GetInstance<DepartmentsViewModel>();
         public CustomerViewModel CustomerViewModel => ServiceLocator.Current.GetInstance<CustomerViewModel>();
-
-
-
-
+        public OptionsGroupsViewModel OptionsGroupsViewModel => ServiceLocator.Current.GetInstance<OptionsGroupsViewModel>();
     }
 }
