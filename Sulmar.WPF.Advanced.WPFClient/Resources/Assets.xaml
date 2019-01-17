@@ -7,13 +7,6 @@
     <BitmapImage x:Key="CustomerImage" UriSource="/Assets/User Profile 1-WF.png" />
     <BitmapImage x:Key="DepartmentsImage" UriSource="/Assets/Organization-WF.png" />
 
-    <Style TargetType="Image">
-        <Setter Property="Width" Value="40" />
-    </Style>
-
-    <Style TargetType="Button">
-
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-    </Style>
+    
            
 </ResourceDictionary>
