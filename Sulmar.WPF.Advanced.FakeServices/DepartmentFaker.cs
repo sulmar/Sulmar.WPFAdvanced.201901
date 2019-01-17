@@ -13,7 +13,8 @@ namespace Sulmar.WPF.Advanced.FakeServices
             StrictMode(true);
             RuleFor(p => p.Id, f => f.IndexFaker);
             RuleFor(p => p.Name, f => f.Commerce.Department());
-            RuleFor(p => p.Customers, f => customerFaker.Generate(f.Random.Int(3, 10)));
+            //RuleFor(p => p.Customers, f => customerFaker.Generate(f.Random.Int(3, 10)));
+            RuleFor(p => p.Customers, f => customerFaker.Generate(5));
         }
     }
 }

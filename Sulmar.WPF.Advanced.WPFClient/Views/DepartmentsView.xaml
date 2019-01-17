@@ -70,22 +70,37 @@
                  />-->
 
 
-        <StackPanel>
+        <ScrollViewer>
 
             <!--<cc:MyControl Area="{Binding}" />-->
 
-            <TextBlock Text="Hello World" ap:Ex.HeaderContent="Hello Header" />
+            <!--<TextBlock Text="Hello World" ap:Ex.HeaderContent="Hello Header" />-->
 
 
-            <TreeView 
-            ItemsSource="{Binding Source={StaticResource DepartmentsSource}}"
-            ItemTemplate="{StaticResource DepartmentTemplate}"
-            />
-
-         
+            <!--<TreeView 
+                ItemsSource="{Binding Source={StaticResource DepartmentsSource}}"
+                ItemTemplate="{StaticResource DepartmentTemplate}" />-->
 
 
-        </StackPanel>
+            
+            <ListBox ItemsSource="{Binding Departments}"
+                     ItemTemplate="{StaticResource DepartmentTemplate}"
+                     VirtualizingPanel.IsVirtualizing="False" >
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+
+                        <!--<StackPanel Orientation="Horizontal" />-->
+
+                        <UniformGrid Columns="2" />
+
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+            </ListBox>
+                     
+
+        </ScrollViewer>
 
     </Grid>
 </Page>

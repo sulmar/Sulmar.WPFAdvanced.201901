@@ -29,8 +29,11 @@
                 x:Key="CustomerTemplate"
                 DataType="{x:Type m:Customer}" >
 
-                <StackPanel>
-                    <TextBlock>
+                <StackPanel Orientation="Horizontal">
+
+                    <Image Width="32" Source="{Binding Photo}" />
+
+                    <TextBlock VerticalAlignment="Center">
                         <TextBlock.Text>
                             <MultiBinding StringFormat="{}{0} {1}">
                                 <Binding Path="FirstName" />
@@ -63,6 +66,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
@@ -74,11 +78,39 @@
             
             />
 
-        <ListView ItemsSource="{Binding Customers}"
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+
+        <!--<ListBox ItemsSource="{Binding Customers}"
                   ItemTemplate="{StaticResource CustomerTemplate}" 
                   SelectedItem="{Binding SelectedCustomer}"
                   Grid.Column="1"
-                  />
+                 VirtualizingPanel.IsVirtualizing="True"
+                 VirtualizingPanel.VirtualizationMode="Recycling"
+                  />-->
+
+        <ListBox ItemsSource="{Binding Customers}"
+                  ItemTemplate="{StaticResource CustomerTemplate}" 
+                  SelectedItem="{Binding SelectedCustomer}"
+                  Grid.Column="2"
+                  >
+
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            
+        </ListBox>
+
+        <!--<DataGrid ItemsSource="{Binding Customers}"
+                  AutoGenerateColumns="True"
+                  EnableRowVirtualization="True"
+                  EnableColumnVirtualization="True"
+                  VirtualizingPanel.IsVirtualizing="True"
+                  VirtualizingPanel.CacheLengthUnit="Item"
+                  VirtualizingPanel.CacheLength="3"
+                  VirtualizingPanel.IsContainerVirtualizable="True"
+                  />-->
 
 
     </Grid>

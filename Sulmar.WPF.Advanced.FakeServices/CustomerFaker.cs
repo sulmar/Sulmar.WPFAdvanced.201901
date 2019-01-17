@@ -21,7 +21,7 @@ namespace Sulmar.WPF.Advanced.FakeServices
             RuleFor(p => p.Photo, f => f.Person.Avatar);
             RuleFor(p => p.IsDeleted, f => f.Random.Bool(0.8f));
             Ignore(p => p.IsSelected);
-            FinishWith((f, c) => Debug.WriteLine($"Customer created {c.FirstName} {c.LastName}"));
+         //   FinishWith((f, c) => Debug.WriteLine($"Customer created {c.FirstName} {c.LastName}"));
 
         }
     }
