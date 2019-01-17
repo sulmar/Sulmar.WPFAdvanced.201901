@@ -23,7 +23,8 @@
                 <StackPanel DockPanel.Dock="Left">
                     <Button Command="{Binding ShowCustomersCommand}">Customers</Button>
                     <Button Command="{Binding ShowDepartmentsCommand}">Departments</Button>
-                    <Button Command="{Binding ShowCustomerCommand}">Customer</Button>
+                    <Button Command="{Binding NavigateCommand}" CommandParameter="CustomersView">Customer</Button>
+                    <Button Command="{Binding NavigateCommand}" CommandParameter="EmployeeView">Employee</Button>
                 </StackPanel>
 
                 <Frame 
