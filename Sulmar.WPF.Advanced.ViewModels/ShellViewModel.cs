@@ -8,20 +8,19 @@ namespace Sulmar.WPF.Advanced.ViewModels
     {
         private readonly INavigationService navigationService;
 
-
-        public ICommand ShowCustomersCommand { get; }
         public ICommand ShowDepartmentsCommand { get; set; }
-        public ICommand ShowCustomerCommand { get; }
+
+        public RelayCommand<string> NavigateCommand { get; }
 
         public ShellViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
 
-            ShowCustomersCommand = new RelayCommand(ShowCustomers);
             ShowDepartmentsCommand = new RelayCommand(()=>navigationService.Navigate("DepartmentsView"));
-            ShowCustomerCommand = new RelayCommand(() => navigationService.Navigate("CustomerView"));
+
+            NavigateCommand = new RelayCommand<string>(p => navigationService.Navigate(p));
+
         }
 
-        private void ShowCustomers() => navigationService.Navigate("CustomersView");
     }
 }
