@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cc="clr-namespace:Sulmar.WPF.Advanced.WPFClient.CustomControls"
         xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
         DataContext="{Binding Source={StaticResource Locator}, Path=ShellViewModel}"
         mc:Ignorable="d"        
@@ -13,20 +14,55 @@
             <DockPanel x:Name="Header"
                        DockPanel.Dock="Top"
                        >
-                <Button Content="Menu"/>
+                
+                <ToggleButton x:Name="HamburgerToggleButton" 
+                              Content="Menu"/>
+                
                 <Button Content="User"/>
           
             </DockPanel>
 
-            <DockPanel>
+            <DockPanel x:Name="Content">
 
-                <StackPanel DockPanel.Dock="Left">
-                    <Button Command="{Binding ShowCustomersCommand}">Customers</Button>
-                    <Button Command="{Binding ShowDepartmentsCommand}">Departments</Button>
-                    <Button Command="{Binding NavigateCommand}" CommandParameter="CustomersView">Customer</Button>
-                    <Button Command="{Binding NavigateCommand}" CommandParameter="EmployeeView">Employee</Button>
-                </StackPanel>
+                <cc:HamburgerControl x:Name="Menu" DockPanel.Dock="Left"
+                                     IsExpanded="{Binding ElementName=HamburgerToggleButton, Path=IsChecked}"
+                                     >
 
+                    <StackPanel >
+                        <Button 
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="CustomersView" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomersImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Customers" />
+                            </StackPanel>
+
+                        </Button>
+                        <Button Command="{Binding ShowDepartmentsCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource DepartmentsImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Departments" />
+                            </StackPanel>
+                            
+                        </Button>
+                        <Button Command="{Binding NavigateCommand}" CommandParameter="CustomerView">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Customer" />
+                            </StackPanel>
+                            
+                        </Button>
+                        <Button Command="{Binding NavigateCommand}" CommandParameter="EmployeeView">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Employee" />
+                            </StackPanel>
+
+                        </Button>
+                    </StackPanel>
+
+                </cc:HamburgerControl>
+                
                 <Frame 
                     x:Name="MainFrame"
                     NavigationUIVisibility="Visible"

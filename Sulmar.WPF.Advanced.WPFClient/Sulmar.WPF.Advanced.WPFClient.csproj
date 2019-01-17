@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="AttachedProperties\Attached.cs" />
     <Compile Include="AttachedProperties\TextBoxEx.cs" />
+    <Compile Include="CustomControls\HamburgerControl.cs" />
     <Compile Include="CustomControls\MyControl.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
@@ -156,6 +157,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Resources\Assets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CustomersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
