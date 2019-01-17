@@ -203,5 +203,10 @@
       <Name>Sulmar.WPF.Advanced.WPF</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Organization-WF.png" />
+    <Resource Include="Assets\User Profile 1-WF.png" />
+    <Resource Include="Assets\Users-WF.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
