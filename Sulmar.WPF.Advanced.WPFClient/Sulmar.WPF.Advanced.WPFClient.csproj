@@ -123,6 +123,9 @@
     <Compile Include="MarkupExtensions\CurrentDirectory.cs" />
     <Compile Include="MarkupExtensions\VersionMarkupExtension.cs" />
     <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="Views\3DView.xaml.cs">
+      <DependentUpon>3DView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\3DView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

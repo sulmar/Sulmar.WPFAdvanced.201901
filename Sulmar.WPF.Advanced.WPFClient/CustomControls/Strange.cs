@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 namespace Sulmar.WPF.Advanced.WPFClient.CustomControls
@@ -42,7 +44,17 @@ namespace Sulmar.WPF.Advanced.WPFClient.CustomControls
 
             drawingContext.DrawLine(pen, new Point(0, 0), new Point(x, y));
             drawingContext.DrawLine(pen, new Point(0, y), new Point(x, 0));
-            
+
+            //BitmapImage bitmapImage = new BitmapImage();
+            //bitmapImage.BeginInit();
+            //Stream stream = new MemoryStream();
+            //bitmapImage.StreamSource = stream;
+            //bitmapImage.EndInit();
+            //bitmapImage.Freeze();
+            //drawingContext.DrawImage(bitmapImage, new Rect(RenderSize));
+
+            //drawingContext.DrawImage()
+
             base.OnRender(drawingContext);
 
             

@@ -1,0 +1,164 @@
+﻿<Page x:Class="Sulmar.WPF.Advanced.WPFClient.Views._3DView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="_3DView">
+
+    <Grid>
+
+
+        <TabControl>
+
+            <TabItem Header="Cube 3D">
+
+                <DockPanel>
+
+                    <StackPanel x:Name="Sliders">
+
+                        <Slider Height="23" HorizontalAlignment="Left" 
+                    Margin="12,12,0,0" Name="sliderX"
+                    VerticalAlignment="Top" Width="187" 
+                    Maximum="360"
+                    Value="{Binding ElementName=rotateX, Path=Angle}" />
+
+                        <Slider Height="23" HorizontalAlignment="Left" 
+                    Margin="12,12,0,0" Name="sliderY"
+                    VerticalAlignment="Top" Width="187" 
+                    Maximum="360"
+                    Value="{Binding ElementName=rotateY, Path=Angle}" />
+
+                        <Slider Height="23" HorizontalAlignment="Left" 
+                    Margin="12,12,0,0" Name="sliderZ"
+                    VerticalAlignment="Top" Width="187" 
+                    Maximum="360"
+                    Value="{Binding ElementName=rotateZ, Path=Angle}" />
+
+                    </StackPanel>
+
+                    <Viewport3D  Name="viewport3D1">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="6 5 4" 
+                                   LookDirection="-6 -5 -4" />
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <DirectionalLight Direction="-1,-1,-1"  />
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <GeometryModel3D>
+                                    <GeometryModel3D.Geometry>
+                                        <MeshGeometry3D 
+                                Positions="0 0 0  1 0 0  0 1 0  1 1 0  0 0 1  1 0 1  0 1 1  1 1 1"
+                                TriangleIndices="2 3 1  2 1 0  7 1 3  7 5 1  6 5 7  6 4 5  6 2 0  2 0 4  2 7 3  2 6 7  0 1 5  0 5 4">
+                                        </MeshGeometry3D>
+                                    </GeometryModel3D.Geometry>
+                                    <GeometryModel3D.Material>
+                                        <DiffuseMaterial>
+                                            <DiffuseMaterial.Brush>
+                                                <SolidColorBrush Color="Blue"/>
+                                            </DiffuseMaterial.Brush>
+                                        </DiffuseMaterial>
+                                    </GeometryModel3D.Material>
+
+                                </GeometryModel3D>
+                            </ModelVisual3D.Content>
+
+                            <ModelVisual3D.Transform>
+                                <Transform3DGroup>
+                                    <RotateTransform3D CenterX="0.5" CenterY="0.5" CenterZ="0.5" >
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D x:Name="rotateX" Axis="1 0 0"/>
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+
+                                    <RotateTransform3D CenterX="0.5" CenterY="0.5" CenterZ="0.5" >
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D x:Name="rotateY" Axis="0 1 0"/>
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+
+                                    <RotateTransform3D CenterX="0.5" CenterY="0.5" CenterZ="0.5" >
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D x:Name="rotateZ" Axis="0 0 1"/>
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+
+                                </Transform3DGroup>
+
+                            </ModelVisual3D.Transform>
+
+                        </ModelVisual3D>
+                    </Viewport3D>
+
+
+                </DockPanel>
+
+            </TabItem>
+            
+            <TabItem Header="2D in 3D">
+                <Viewport3D Visibility="Visible">
+                    <Viewport3D.Camera>
+                        <PerspectiveCamera LookDirection="-10,-10,-10" Position="10,10,10" UpDirection="1,0,0"/>
+                    </Viewport3D.Camera>
+
+                    <ModelVisual3D>
+
+
+                        <Viewport2DVisual3D >
+                            <Viewport2DVisual3D.Transform>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="uiRotate" Angle="40" Axis="0, 1, 0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                            </Viewport2DVisual3D.Transform>
+                            <Viewport2DVisual3D.Geometry>
+                                <MeshGeometry3D 
+                            Positions="-1,1,0 -1,-1,0 1,-1,0 1,1,0"
+                            TextureCoordinates="0,0 0,1 1,1 1,0" 
+                            TriangleIndices="0 1 2 0 2 3"/>
+                            </Viewport2DVisual3D.Geometry>
+                            <Viewport2DVisual3D.Material>
+                                <DiffuseMaterial Viewport2DVisual3D.IsVisualHostMaterial="True" Brush="White"/>
+                            </Viewport2DVisual3D.Material>
+
+
+
+                            <Viewport2DVisual3D.Visual>
+                                <ListBox>
+
+                                    <!--<ListBox.Resources>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Background" Value="Blue" />
+                                    <Setter Property="Foreground" Value="White" />
+                                </Style>
+                            </ListBox.Resources>-->
+                                    <ListBoxItem>Item 1</ListBoxItem>
+                                    <ListBoxItem>Item 2</ListBoxItem>
+                                    <ListBoxItem>Item 3</ListBoxItem>
+                                    <ListBoxItem>Item 4</ListBoxItem>
+                                    <ListBoxItem>Item 6</ListBoxItem>
+                                    <ListBoxItem>Item 7</ListBoxItem>
+                                    <ListBoxItem>Item 8</ListBoxItem>
+                                </ListBox>
+                            </Viewport2DVisual3D.Visual>
+                        </Viewport2DVisual3D>
+
+                        <ModelVisual3D.Content>
+                            <DirectionalLight Color="#FFFFFFFF" Direction="0,0,-1"/>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                </Viewport3D>
+            </TabItem>
+
+          
+        </TabControl>
+        
+    </Grid>
+</Page>

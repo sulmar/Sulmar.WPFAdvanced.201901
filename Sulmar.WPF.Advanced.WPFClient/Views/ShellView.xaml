@@ -63,14 +63,7 @@
                             </StackPanel>
                         </Button>
 
-                        <Button Command="{Binding NavigateCommand}" 
-                                CommandParameter="OptionsGroupsView">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="{StaticResource CustomerImage}" />
-                                <TextBlock VerticalAlignment="Center" Text="Settings" />
-                            </StackPanel>
-
-                        </Button>
+                    
 
 
                         <Button Command="{Binding FireCommand}" >
@@ -88,6 +81,26 @@
                             </StackPanel>
 
                         </Button>
+
+                        <Button Command="{Binding NavigateCommand}" CommandParameter="3DView">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="3D" />
+                            </StackPanel>
+
+                        </Button>
+
+                        <Button Command="{Binding NavigateCommand}"
+                                CommandParameter="OptionsGroupsView"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Settings" />
+                            </StackPanel>
+
+                        </Button>
+
+                        
 
                     </StackPanel>
 

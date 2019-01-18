@@ -4,7 +4,7 @@
                     xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Resources">
 
     <Style TargetType="{x:Type cc:HamburgerControl}" >
-        <Setter Property="Width" Value="40" />
+        <Setter Property="Width" Value="60" />
         <Style.Triggers>
             <Trigger Property="IsExpanded" Value="True">
                 <!--<Setter Property="Width" Value="200" />-->
@@ -49,6 +49,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="Template" Value="{StaticResource MyButtonTemplate}" />
         <Setter Property="Background" Value="Blue" />
+        <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="10"/>
     </Style>
 
