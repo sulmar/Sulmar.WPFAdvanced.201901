@@ -202,6 +202,10 @@
       <Project>{915C8C5C-266B-4980-A7C7-107366E41942}</Project>
       <Name>Sulmar.WPF.Advanced.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sulmar.WPF.Advanced.Controls\Sulmar.WPF.Advanced.Controls.csproj">
+      <Project>{1d094b63-937b-4191-aac3-76c5f364b96a}</Project>
+      <Name>Sulmar.WPF.Advanced.Controls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sulmar.WPF.Advanced.FakeServices\Sulmar.WPF.Advanced.FakeServices.csproj">
       <Project>{4C3BF1EF-566A-45FE-B931-17DAA798D7D7}</Project>
       <Name>Sulmar.WPF.Advanced.FakeServices</Name>

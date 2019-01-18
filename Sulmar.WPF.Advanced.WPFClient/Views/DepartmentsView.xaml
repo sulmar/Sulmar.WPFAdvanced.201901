@@ -8,6 +8,7 @@
       xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
       xmlns:cc="clr-namespace:Sulmar.WPF.Advanced.WPFClient.CustomControls"
       xmlns:ap="clr-namespace:Sulmar.WPF.Advanced.WPFClient.AttachedProperties"
+      xmlns:uc="http://www.sulmar.pl/xaml/controls"
       DataContext="{Binding Source={StaticResource Locator}, Path=DepartmentsViewModel}"
       mc:Ignorable="d" 
       KeepAlive="True"
@@ -83,22 +84,24 @@
 
 
             
-            <ListBox ItemsSource="{Binding Departments}"
+            <!--<ListBox ItemsSource="{Binding Departments}"
                      ItemTemplate="{StaticResource DepartmentTemplate}"
                      VirtualizingPanel.IsVirtualizing="False" >
 
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
 
-                        <!--<StackPanel Orientation="Horizontal" />-->
-
                         <UniformGrid Columns="2" />
 
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
 
-            </ListBox>
-                     
+            </ListBox>-->
+
+
+            <UserControl1 />
+            
+
 
         </ScrollViewer>
 

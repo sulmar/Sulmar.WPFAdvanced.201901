@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks.PrismDemo", "Fra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frameworks.ModuleA", "Frameworks.ModuleA\Frameworks.ModuleA.csproj", "{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sulmar.WPF.Advanced.Controls", "Sulmar.WPF.Advanced.Controls\Sulmar.WPF.Advanced.Controls.csproj", "{1D094B63-937B-4191-AAC3-76C5F364B96A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{436C36E1-BAF7-4EA6-A8AB-26CCEA33556B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D094B63-937B-4191-AAC3-76C5F364B96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D094B63-937B-4191-AAC3-76C5F364B96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D094B63-937B-4191-AAC3-76C5F364B96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D094B63-937B-4191-AAC3-76C5F364B96A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
