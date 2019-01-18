@@ -15,6 +15,13 @@ namespace Sulmar.WPF.Advanced.ViewModels
         }
 
         public IEnumerable<Department> Departments => Items;
+        
+
+        public void Send()
+        {
+
+        }
+
 
     }
 }

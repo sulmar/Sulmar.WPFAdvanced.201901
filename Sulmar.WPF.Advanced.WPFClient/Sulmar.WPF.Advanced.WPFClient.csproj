@@ -44,6 +44,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.0.1\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -110,8 +113,15 @@
     </Compile>
     <Compile Include="AttachedProperties\Attached.cs" />
     <Compile Include="AttachedProperties\TextBoxEx.cs" />
+    <Compile Include="Behaviors\MyButtonBehavior.cs" />
+    <Compile Include="Converters\MyConverter.cs" />
     <Compile Include="CustomControls\HamburgerControl.cs" />
     <Compile Include="CustomControls\MyControl.cs" />
+    <Compile Include="CustomControls\MyShape.cs" />
+    <Compile Include="CustomControls\MyVisualHost.cs" />
+    <Compile Include="CustomControls\Strange.cs" />
+    <Compile Include="MarkupExtensions\CurrentDirectory.cs" />
+    <Compile Include="MarkupExtensions\VersionMarkupExtension.cs" />
     <Compile Include="ViewModelLocator.cs" />
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
@@ -127,6 +137,9 @@
     </Compile>
     <Compile Include="Views\OptionsGroupsView.xaml.cs">
       <DependentUpon>OptionsGroupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShapesView.xaml.cs">
+      <DependentUpon>ShapesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -189,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\OptionsGroupsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShapesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

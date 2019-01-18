@@ -56,5 +56,7 @@ using System.Windows.Markup;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: XmlnsDefinition("http://www.sulmar.pl/xaml/controls", "Sulmar.WPF.Advanced.Controls")]
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Sulmar.WPF.Advanced.Controls")]
+//[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Sulmar.WPF.Advanced.Controls")]
+
+[assembly: XmlnsPrefix("http://www.sulmar.pl/xaml/controls", "Marcin")]
 

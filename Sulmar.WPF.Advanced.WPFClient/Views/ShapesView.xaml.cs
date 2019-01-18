@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace Sulmar.WPF.Advanced.WPFClient.Views
 {
     /// <summary>
-    /// Interaction logic for DepartmentsView.xaml
+    /// Interaction logic for ShapesView.xaml
     /// </summary>
-    public partial class DepartmentsView : Page
+    public partial class ShapesView : Page
     {
-        public DepartmentsView()
+        public ShapesView()
         {
             InitializeComponent();
         }
-
- 
     }
 }

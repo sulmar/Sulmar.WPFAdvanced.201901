@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:cc="clr-namespace:Sulmar.WPF.Advanced.WPFClient.CustomControls"
+        xmlns:me="clr-namespace:Sulmar.WPF.Advanced.WPFClient.MarkupExtensions"
         xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"        
         DataContext="{Binding Source={StaticResource Locator}, Path=ShellViewModel}"
         mc:Ignorable="d"        
@@ -18,9 +19,11 @@
                 
                 <ToggleButton x:Name="HamburgerToggleButton" 
                               Content="Menu"/>
-                
-                <Button Content="User"/>
-          
+
+
+                <TextBlock Text="{me:CurrentDirectory}" />
+                <TextBlock Text="{me:VersionMarkup 199}" />
+
             </DockPanel>
 
             <DockPanel x:Name="Content">
@@ -74,6 +77,14 @@
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="{StaticResource CustomerImage}" />
                                 <TextBlock VerticalAlignment="Center" Text="Fire" />
+                            </StackPanel>
+
+                        </Button>
+
+                        <Button Command="{Binding NavigateCommand}" CommandParameter="ShapesView">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Shapes" />
                             </StackPanel>
 
                         </Button>

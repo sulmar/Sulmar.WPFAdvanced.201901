@@ -8,7 +8,9 @@
       xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
       xmlns:cc="clr-namespace:Sulmar.WPF.Advanced.WPFClient.CustomControls"
       xmlns:ap="clr-namespace:Sulmar.WPF.Advanced.WPFClient.AttachedProperties"
-      xmlns:uc="http://www.sulmar.pl/xaml/controls"
+      xmlns:Marcin="http://www.sulmar.pl/xaml/controls"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:b="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Behaviors"
       DataContext="{Binding Source={StaticResource Locator}, Path=DepartmentsViewModel}"
       mc:Ignorable="d" 
       KeepAlive="True"
@@ -99,8 +101,21 @@
             </ListBox>-->
 
 
-            <UserControl1 />
-            
+            <!--<Marcin:UserControl1/>-->
+
+            <Button Width="200" Height="100" Content="My behavior">
+                <i:Interaction.Behaviors>
+                    <b:MyButtonBehavior />
+                </i:Interaction.Behaviors>
+                
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:CallMethodAction MethodName="Send" TargetObject="{Binding}" />
+                        <!--<i:LaunchUriOrFileAction Path="http://www.sulmar.pl" />-->
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+
 
 
         </ScrollViewer>
