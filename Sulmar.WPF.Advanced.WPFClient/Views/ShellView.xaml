@@ -67,7 +67,16 @@
                             </StackPanel>
 
                         </Button>
-                        
+
+
+                        <Button Command="{Binding FireCommand}" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Fire" />
+                            </StackPanel>
+
+                        </Button>
+
                     </StackPanel>
 
                 </cc:HamburgerControl>

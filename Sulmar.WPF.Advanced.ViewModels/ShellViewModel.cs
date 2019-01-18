@@ -12,6 +12,9 @@ namespace Sulmar.WPF.Advanced.ViewModels
 
         public RelayCommand<string> NavigateCommand { get; }
 
+
+        public ICommand FireCommand { get; set; }
+
         public ShellViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
@@ -19,6 +22,13 @@ namespace Sulmar.WPF.Advanced.ViewModels
             ShowDepartmentsCommand = new RelayCommand(()=>navigationService.Navigate("DepartmentsView"));
 
             NavigateCommand = new RelayCommand<string>(p => navigationService.Navigate(p));
+
+            FireCommand = new DelayRelayCommand(() => Fire(), delay: TimeSpan.FromSeconds(5));
+
+        }
+
+        private void Fire()
+        {
 
         }
 
