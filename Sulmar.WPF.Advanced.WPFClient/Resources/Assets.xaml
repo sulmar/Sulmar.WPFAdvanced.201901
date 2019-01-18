@@ -6,7 +6,6 @@
     <BitmapImage x:Key="CustomersImage" UriSource="/Assets/Users-WF.png" />
     <BitmapImage x:Key="CustomerImage" UriSource="/Assets/User Profile 1-WF.png" />
     <BitmapImage x:Key="DepartmentsImage" UriSource="/Assets/Organization-WF.png" />
+    <BitmapImage x:Key="HamburgerMenuImate" UriSource="/Assets/Menu Interface-WF.png" />
 
-    
-           
 </ResourceDictionary>

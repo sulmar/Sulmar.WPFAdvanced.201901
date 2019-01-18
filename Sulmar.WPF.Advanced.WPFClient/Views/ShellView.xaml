@@ -16,9 +16,10 @@
             <DockPanel x:Name="Header"
                        DockPanel.Dock="Top"
                        >
-                
-                <ToggleButton x:Name="HamburgerToggleButton" 
-                              Content="Menu"/>
+
+                <ToggleButton x:Name="HamburgerToggleButton" >
+                    <Image Source="{StaticResource HamburgerMenuImate}" />
+                </ToggleButton>
 
 
                 <TextBlock Text="{me:CurrentDirectory}" />

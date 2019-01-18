@@ -53,6 +53,13 @@
         <Setter Property="Margin" Value="10"/>
     </Style>
 
+    <Style TargetType="ToggleButton">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Background" Value="Blue" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
 
     <Style TargetType="{x:Type GridSplitter}">
         <Setter Property="VerticalAlignment" Value="Stretch" />

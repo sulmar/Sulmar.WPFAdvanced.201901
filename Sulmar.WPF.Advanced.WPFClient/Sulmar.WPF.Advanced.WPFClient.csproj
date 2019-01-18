@@ -256,5 +256,8 @@
     <Resource Include="Assets\User Profile 1-WF.png" />
     <Resource Include="Assets\Users-WF.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Menu Interface-WF.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
