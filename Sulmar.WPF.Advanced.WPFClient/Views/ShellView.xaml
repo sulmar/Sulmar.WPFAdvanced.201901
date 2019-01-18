@@ -21,10 +21,23 @@
                     <Image Source="{StaticResource HamburgerMenuImate}" />
                 </ToggleButton>
 
+                <ContentControl />
 
-                <TextBlock Text="{me:CurrentDirectory}" />
-                <TextBlock Text="{me:VersionMarkup 199}" />
 
+
+            </DockPanel>
+
+            <DockPanel x:Name="Status" DockPanel.Dock="Bottom">
+                <StatusBar>
+                    <StatusBarItem>
+                        <TextBlock Text="{me:VersionMarkup 199}" />
+                    </StatusBarItem>
+                    
+                    <StatusBarItem>
+                        <TextBlock Text="{me:CurrentDirectory}" />
+                    </StatusBarItem>
+                    
+                </StatusBar>
             </DockPanel>
 
             <DockPanel x:Name="Content">
