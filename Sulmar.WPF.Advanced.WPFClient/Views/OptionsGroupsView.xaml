@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:m="clr-namespace:Sulmar.WPF.Advanced.Models;assembly=Sulmar.WPF.Advanced.Models"
       xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
       DataContext="{Binding Source={StaticResource Locator}, Path=OptionsGroupsViewModel}" 
       mc:Ignorable="d" 
@@ -11,10 +12,73 @@
 
     <Grid>
 
+        <Grid.Resources>
+
+            <DataTemplate x:Key="LogicalOptionTemplate"                          
+                          DataType="{x:Type m:Option}"
+                          >
+                <CheckBox 
+                    Content="{Binding Name}"
+                    IsChecked="{Binding Value}" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="TextOptionTemplate" 
+                          DataType="{x:Type m:Option}">
+                <DockPanel>
+                    <TextBlock Width="100" Text="{Binding Name}" />
+                    <TextBox Width="200" Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Text="{Binding Type}" />
+                </DockPanel>
+            </DataTemplate>
+
+            <DataTemplate x:Key="NumericOptionTemplate" 
+                          DataType="{x:Type m:Option}">
+                <DockPanel>
+                    <TextBlock Width="100" Text="{Binding Name}" />
+                    <Slider Width="200" Value="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+                </DockPanel>
+            </DataTemplate>
+
+            <DataTemplate x:Key="OptionTemplate" 
+                          DataType="{x:Type m:Option}">
+
+                <ContentControl Content="{Binding}">
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Setter Property="ContentTemplate" Value="{StaticResource TextOptionTemplate}" />
+
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Type}" Value="{x:Static m:OptionType.Logical}">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource LogicalOptionTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Type}" Value="{x:Static m:OptionType.Numeric}">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource NumericOptionTemplate}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+
+
+            </DataTemplate>
+
+
+            <DataTemplate x:Key="OptionsGroupTemplate" 
+                          DataType="{x:Type m:OptionsGroup}">
+                <StackPanel>
+                    <ListBox ItemsSource="{Binding Options}"
+                             ItemTemplate="{StaticResource OptionTemplate}"
+                             />
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+
         <TabControl 
             TabStripPlacement="Left"
             DisplayMemberPath="Name"
-            ItemsSource="{Binding Items}" />
+            ItemsSource="{Binding Items}"            
+            ContentTemplate="{StaticResource OptionsGroupTemplate}"            
+            />
 
     </Grid>
 </Page>

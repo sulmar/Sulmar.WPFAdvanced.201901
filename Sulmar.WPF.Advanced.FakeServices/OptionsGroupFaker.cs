@@ -12,7 +12,7 @@ namespace Sulmar.WPF.Advanced.FakeServices
         {
             StrictMode(true);
             RuleFor(p => p.Name, f => f.Lorem.Word());
-            RuleFor(p => p.Options, optionFaker.Generate(5));
+            RuleFor(p => p.Options, f => optionFaker.Generate(f.Random.Int(1, 5)));
         }
     }
 
