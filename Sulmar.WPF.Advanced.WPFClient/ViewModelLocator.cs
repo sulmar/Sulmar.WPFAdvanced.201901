@@ -34,6 +34,7 @@ namespace Sulmar.WPF.Advanced.ViewModels
             builder.RegisterType<CustomersViewModel>().SingleInstance();
             builder.RegisterType<DepartmentsViewModel>().SingleInstance();
             builder.RegisterType<OptionsGroupsViewModel>().SingleInstance();
+            builder.RegisterType<AsyncBindingViewModel>();
             builder.RegisterType<CustomerViewModel>();
             builder.RegisterType<CustomerFaker>();
             builder.RegisterType<DepartmentFaker>();
@@ -83,5 +84,6 @@ namespace Sulmar.WPF.Advanced.ViewModels
         public DepartmentsViewModel DepartmentsViewModel => ServiceLocator.Current.GetInstance<DepartmentsViewModel>();
         public CustomerViewModel CustomerViewModel => ServiceLocator.Current.GetInstance<CustomerViewModel>();
         public OptionsGroupsViewModel OptionsGroupsViewModel => ServiceLocator.Current.GetInstance<OptionsGroupsViewModel>();
+        public AsyncBindingViewModel AsyncBindingViewModel => ServiceLocator.Current.GetInstance<AsyncBindingViewModel>();
     }
 }

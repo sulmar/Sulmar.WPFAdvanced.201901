@@ -114,7 +114,18 @@
 
                         </Button>
 
+                        <Button Command="{Binding NavigateCommand}"
+                                CommandParameter="AsyncBindingView"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{StaticResource CustomerImage}" />
+                                <TextBlock VerticalAlignment="Center" Text="Async Binding" />
+                            </StackPanel>
+
+                        </Button>
+
                         
+
 
                     </StackPanel>
 

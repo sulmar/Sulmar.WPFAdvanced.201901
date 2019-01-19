@@ -126,6 +126,9 @@
     <Compile Include="Views\3DView.xaml.cs">
       <DependentUpon>3DView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\AsyncBindingView.xaml.cs">
+      <DependentUpon>AsyncBindingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomersView.xaml.cs">
       <DependentUpon>CustomersView.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\3DView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AsyncBindingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

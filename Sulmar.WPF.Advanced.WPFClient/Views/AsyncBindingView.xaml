@@ -1,0 +1,40 @@
+﻿<Page x:Class="Sulmar.WPF.Advanced.WPFClient.Views.AsyncBindingView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      DataContext="{Binding Source={StaticResource Locator}, Path=AsyncBindingViewModel}" 
+      Title="AsyncBindingView">
+
+    <Grid>
+
+
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock 
+            Text="{Binding Message, IsAsync=True, FallbackValue=Loading...}" 
+            />
+
+            <TextBlock>
+                <TextBlock.Text>
+                    <PriorityBinding FallbackValue="Please wait...">
+                        <Binding Path="Slow" IsAsync="True" />
+                        <Binding Path="Medium" IsAsync="True" />
+                        <Binding Path="Fast" IsAsync="True" />
+                    </PriorityBinding>
+                </TextBlock.Text>
+            </TextBlock>
+            
+        </StackPanel>
+      
+    </Grid>
+</Page>
