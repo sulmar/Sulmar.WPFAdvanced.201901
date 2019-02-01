@@ -27,7 +27,7 @@ W bindingu należy dodać attached property _PresentationTraceSources.TraceLevel
 
 ### Diagnostyka bindingu w Visual Studio
 
-~~~Tools -> Options -> Debugging -> Output Window -> WPF Trace Settings -> Data Binding~~~
+`Tools -> Options -> Debugging -> Output Window -> WPF Trace Settings -> Data Binding`
 
 
 
