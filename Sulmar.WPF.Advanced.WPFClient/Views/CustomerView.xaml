@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Sulmar.WPF.Advanced.WPFClient.Views"
+      xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       DataContext="{Binding Source={StaticResource Locator}, Path=CustomerViewModel}" 
@@ -86,7 +87,7 @@
         </Grid.Resources>
         
         <StackPanel DataContext="{Binding Customer}">
-            <TextBox Text="{Binding FirstName}" Tag="First name" />
+            <TextBox Text="{Binding FirstName, diag:PresentationTraceSources.TraceLevel=High}" Tag="First name" />
             <TextBox Text="{Binding LastName}" Tag="Last name" />
             <Image Width="200" Source="{Binding Photo}" />
 
