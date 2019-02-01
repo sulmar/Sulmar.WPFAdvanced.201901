@@ -1,7 +1,9 @@
 # Przykłady ze szkolenia WPF dla zaawansowanych
 
 
-## Diagnostyka bindingu z użyciem Attached Properties
+## Diagnostyka 
+
+### Diagnostyka bindingu z użyciem Attached Properties
 
 W bindingu należy dodać attached property _PresentationTraceSources.TraceLevel_ z przestrzeni _System.Diagnostics_.
 
@@ -22,4 +24,12 @@ W bindingu należy dodać attached property _PresentationTraceSources.TraceLevel
       </Grid>
 </Page>    
 ~~~
+
+## Diagnostyka w Visual Studio
+
+'Tools -> Options -> Debugging -> Output Window -> WPF Trace Settings -> Data Binding'
+
+
+
+
 
