@@ -30,6 +30,13 @@ W bindingu należy dodać attached property _PresentationTraceSources.TraceLevel
 `Tools -> Options -> Debugging -> Output Window -> WPF Trace Settings -> Data Binding`
 
 
+## Dispatcher
 
+### Dispatcher Timer
 
-
+~~~ csharp
+  DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(0.5);
+            timer.Tick += (t, s) => this.InvalidateVisual();
+            timer.Start();
+~~~
